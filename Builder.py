@@ -69,7 +69,7 @@ class JeepBuilder(Builder):
 
 # Partes do Carro
 class Pneu:
-   tamanhoRoda = None
+   tamanhoAro = None
 
 class Motor:
    cavalos = None
@@ -87,7 +87,5 @@ def main():
    director.setBuilder(jeepBuilder)
    jeep = director.getCarro()
    jeep.printCarro()
-   print ""
 
-if __name__ == "__main__":
-   main()
+main()
