@@ -66,7 +66,7 @@ def main():
     print(b2)
     print(b3)
 
-    print("ID b1 : {} != ID b2 : {}".format(id(b1), id(b2)))
+    print("ID b1 : {} != ID b2 : {} != ID b3 : {}".format(id(b1), id(b2), id(b3)))
 
 if __name__ == '__main__':
     main()
