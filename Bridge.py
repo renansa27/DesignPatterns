@@ -5,29 +5,29 @@ class Tema(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def color(self):
+    def cor(self):
         pass
 
 
-class DarkTheme(Tema):
+class TemaEscuro(Tema):
 
-    def color(self):
+    def cor(self):
         return 'Preto'
 
 
-class LightTheme(Tema):
+class TemaClaro(Tema):
 
-    def color(self):
+    def cor(self):
         return 'Azul Claro'
 
 
-class AquaTheme(Tema):
+class TemaColorido(Tema):
 
-    def color(self):
-        return 'Cinza Claro'
+    def cor(self):
+        return 'Colorido'
 
 
-class WebPage(object):
+class PaginaWeb(object):
 
     __metaclass__ = ABCMeta
 
@@ -36,30 +36,30 @@ class WebPage(object):
         pass
 
 
-class About(WebPage):
+class Ajuda(PaginaWeb):
 
     def __init__(self, tema):
         self.__tema = tema
 
     def content(self):
-        return 'About page in {}'.format(self.__tema.color())
+        return 'A página Ajuda está com o tema {}'.format(self.__tema.cor())
 
 
-class Home(WebPage):
+class Home(PaginaWeb):
 
     def __init__(self, tema):
         self.__tema = tema
 
     def content(self):
-        return 'Home page in {}'.format(self.__tema.color())
+        return 'A página Home está com o tema {}'.format(self.__tema.cor())
 
 
 if __name__ == '__main__':
-    dark_tema = DarkTheme()
-    aqua_tema = AquaTheme()
+    temaEscuro = TemaEscuro()
+    temaColorido = TemaColorido()
 
-    about = About(dark_tema)
-    home = Home(aqua_tema)
+    ajuda = Ajuda(temaEscuro)
+    home = Home(temaColorido)
 
-    print(about.content())
+    print(ajuda.content())
     print(home.content())
